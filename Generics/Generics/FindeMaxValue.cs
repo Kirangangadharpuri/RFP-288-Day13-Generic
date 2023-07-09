@@ -8,7 +8,7 @@ namespace Generics
 {
     public class FindeMaxValue
     {
-        public static float MaximumFloatNumber(float firstValue, float secondValue, float thirdValue)
+        public static string MaximumStringNumber(string firstValue, string secondValue, string thirdValue)
         {
             if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0 ||
                 firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) > 0 ||
