@@ -11,15 +11,15 @@ namespace Generics
         static void Main(string[] args)
         {
             Console.WriteLine("Please enter the first number");
-            int num_one = Convert.ToInt32(Console.ReadLine());
+            float num_one = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Please enter the second number");
-            int num_two = Convert.ToInt32(Console.ReadLine());
+            float num_two = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Please enter the third number");
-            int num_three = Convert.ToInt32(Console.ReadLine());
+            float num_three = Convert.ToInt32(Console.ReadLine());
 
-            int val = FindeMaxValue.MaximumIntegerNumber(num_one, num_two, num_three);
+            float val = FindeMaxValue.MaximumFloatNumber(num_one, num_two, num_three);
             Console.WriteLine("{0} IS GREATER  NUMBER.", val);
         }
     }
