@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Generics.FindeMaxValue;
 
 namespace Generics
 {
@@ -10,17 +11,25 @@ namespace Generics
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please enter the first number");
-            string num_one = Console.ReadLine();
+            int[] valuesInt = { 1, 2, 3, 4, 5 };
+            double[] valuesDouble = { 10.4, 6.7, 8.2, 9.5, 7.3 };
+            string[] valuesString = { "ram", "shiv", "radha","kiran" };
 
-            Console.WriteLine("Please enter the second number");
-            string num_two = Console.ReadLine();
+            FindMax<int> obj = new FindMax<int>(valuesInt);
+            int MaxInt = obj.TestMaximum();
+            Console.WriteLine("Maximum value in integer is: " + MaxInt);
+            Console.WriteLine("**********************************************");
 
-            Console.WriteLine("Please enter the third number");
-            string num_three = Console.ReadLine();
 
-            string val = FindeMaxValue.MaximumStringNumber(num_one, num_two, num_three);
-            Console.WriteLine("{0} IS GREATER  NUMBER.", val);
+            FindMax<double> obj1 = new FindMax<double>(valuesDouble);
+            double MaxDouble = obj1.TestMaximum();
+            Console.WriteLine("Maximum value in double is: " + MaxDouble);
+            Console.WriteLine("**********************************************");
+
+            FindMax<string> obj2 = new FindMax<string>(valuesString);
+            string MaxString = obj2.TestMaximum();
+            Console.WriteLine("Maximum value in string is: " + MaxString);
+            Console.WriteLine("**********************************************");
         }
     }
 }

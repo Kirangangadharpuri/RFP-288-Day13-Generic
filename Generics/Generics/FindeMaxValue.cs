@@ -8,31 +8,33 @@ namespace Generics
 {
     public class FindeMaxValue
     {
-        public static string MaximumStringNumber(string firstValue, string secondValue, string thirdValue)
+        public class FindMax<T> where T : IComparable
         {
-            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0 ||
-                firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) > 0 ||
-                firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) >= 0)
+            private T[] values;
+
+            public FindMax(params T[] values)
             {
-                return firstValue;
+                this.values = values;
             }
 
-            if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0 ||
-                secondValue.CompareTo(firstValue) >= 0 && secondValue.CompareTo(thirdValue) > 0 ||
-                secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) >= 0)
+            public T MaximumNum()
             {
-                return secondValue;
+                T max = values[0];
+                for (int i = 1; i < values.Length; i++)
+                {
+                    if (values[i].CompareTo(max) > 0)
+                    {
+                        max = values[i];
+                    }
+                }
+                return max;
             }
 
-
-            if (thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) > 0 ||
-                thirdValue.CompareTo(firstValue) >= 0 && thirdValue.CompareTo(secondValue) > 0 ||
-                thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) >= 0)
+            public T TestMaximum()
             {
-                return thirdValue;
+                T max = MaximumNum();
+                return max;
             }
-
-            return firstValue;
         }
     }
 }
