@@ -8,35 +8,27 @@ namespace Generics
 {
     public class FindeMaxValue
     {
-        public class FindMax<T> where T : IComparable
+        public class FindMaxUsingGenerics<T> where T : IComparable
         {
-            private T[] values;
+            public static T MaximumNum<T>(T FirstValue, T SecondValue, T ThirdValue) where T : IComparable
+            {
+                if (FirstValue.CompareTo(SecondValue) > 0 && FirstValue.CompareTo(ThirdValue) > 0 ||
+                   FirstValue.CompareTo(SecondValue) >= 0 && FirstValue.CompareTo(ThirdValue) > 0 ||
+                   FirstValue.CompareTo(SecondValue) > 0 && FirstValue.CompareTo(ThirdValue) > 0)
+                { return FirstValue; }
 
-            public FindMax(params T[] values)
-            {
-                this.values = values;
-            }
-            public T MaximumNum()
-            {
-                T max = values[0];
-                for (int i = 1; i < values.Length; i++)
-                {
-                    if (values[i].CompareTo(max) > 0)
-                    {
-                        max = values[i];
-                    }
-                }
-                return max;
-            }
-            public void PrintMax()
-            {
-                T max = MaximumNum();
-                Console.WriteLine("Maximum value is: " + max);
-            }
-            public T TestMaximum()
-            {
-                T max = MaximumNum();
-                return max;
+                if (SecondValue.CompareTo(FirstValue) > 0 && SecondValue.CompareTo(ThirdValue) > 0 ||
+                  SecondValue.CompareTo(FirstValue) >= 0 && SecondValue.CompareTo(ThirdValue) > 0 ||
+                   SecondValue.CompareTo(FirstValue) > 0 && SecondValue.CompareTo(ThirdValue) > 0)
+                { return SecondValue; }
+
+                if (ThirdValue.CompareTo(FirstValue) > 0 && ThirdValue.CompareTo(SecondValue) > 0 ||
+                  ThirdValue.CompareTo(FirstValue) >= 0 && ThirdValue.CompareTo(SecondValue) > 0 ||
+                  ThirdValue.CompareTo(FirstValue) > 0 && ThirdValue.CompareTo(SecondValue) > 0)
+                { return ThirdValue; }
+
+
+                return FirstValue;
             }
         }
     }
