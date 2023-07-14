@@ -16,7 +16,6 @@ namespace Generics
             {
                 this.values = values;
             }
-
             public T MaximumNum()
             {
                 T max = values[0];
@@ -29,7 +28,11 @@ namespace Generics
                 }
                 return max;
             }
-
+            public void PrintMax()
+            {
+                T max = MaximumNum();
+                Console.WriteLine("Maximum value is: " + max);
+            }
             public T TestMaximum()
             {
                 T max = MaximumNum();
