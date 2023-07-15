@@ -9,13 +9,23 @@ namespace FindMaxNumber_Test
 {
     public class FindMaxTest
     {
+        FindeMaxValue findMaxValue = new FindeMaxValue();
+
         [Test]
         public void ReturnFirstValue()
         {
-            FindeMaxValue findMaxValue = new FindeMaxValue();
+           // FindeMaxValue findMaxValue = new FindeMaxValue();
 
             int Result = findMaxValue.MaximumIntegerNumber(56, 37, 12);
             Assert.AreEqual(Result, 56);
+        }
+        [Test]
+        public void ReturnSecondValue()
+        {
+            // FindeMaxValue findMaxValue = new FindeMaxValue();
+
+            int Result = findMaxValue.MaximumIntegerNumber(56, 87, 12);
+            Assert.AreEqual(Result, 87);
         }
     }
 }
