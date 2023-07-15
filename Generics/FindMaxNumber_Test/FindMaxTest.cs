@@ -27,5 +27,13 @@ namespace FindMaxNumber_Test
             int Result = findMaxValue.MaximumIntegerNumber(56, 87, 12);
             Assert.AreEqual(Result, 87);
         }
+        [Test]
+        public void ReturnThirdtValue()
+        {
+            // FindeMaxValue findMaxValue = new FindeMaxValue();
+
+            int Result = findMaxValue.MaximumIntegerNumber(56, 87, 99);
+            Assert.AreEqual(Result, 99);
+        }
     }
 }
